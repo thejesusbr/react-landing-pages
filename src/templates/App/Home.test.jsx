@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 import { renderTheme } from '../../styles/render-theme';
 import { theme } from '../../styles/theme';
-import Home from './App';
+import Home from './Home';
 
 test('renders learn react link', () => {
   renderTheme(<Home />);
