@@ -9,18 +9,18 @@ describe('<Heading />', () => {
     renderTheme(<Heading>Título</Heading>);
     const heading = screen.getByRole('heading', { name: 'Título' });
     expect(heading).toHaveStyle({
-      color: theme.colors.primaryColor,
-      'font-size': theme.font.sizes.huge,
+      color: theme.colors.darkColor,
+      'font-size': theme.font.sizes.xlarge,
       'text-transform': 'none',
     });
   });
 
-  it('should render with white color', () => {
+  it('should render with light color', () => {
     renderTheme(<Heading darkBG={true}>Título</Heading>);
     const heading = screen.getByRole('heading', { name: 'Título' });
     expect(heading).toHaveStyle({
-      color: theme.colors.white,
-      'font-size': theme.font.sizes.huge,
+      color: theme.colors.lightColor,
+      'font-size': theme.font.sizes.xlarge,
       'text-transform': 'none',
     });
   });
@@ -30,7 +30,7 @@ describe('<Heading />', () => {
     renderTheme(<Heading size="small">Pequeno</Heading>);
     const headingSmall = screen.getByRole('heading', { name: 'Pequeno' });
     expect(headingSmall).toHaveStyle({
-      color: theme.colors.primaryColor,
+      color: theme.colors.darkColor,
       'font-size': theme.font.sizes.normal,
       'text-transform': 'none',
     });
@@ -39,7 +39,7 @@ describe('<Heading />', () => {
     renderTheme(<Heading size="normal">Normal</Heading>);
     const headingNormal = screen.getByRole('heading', { name: 'Normal' });
     expect(headingNormal).toHaveStyle({
-      color: theme.colors.primaryColor,
+      color: theme.colors.darkColor,
       'font-size': theme.font.sizes.xlarge,
       'text-transform': 'none',
     });
@@ -48,7 +48,7 @@ describe('<Heading />', () => {
     renderTheme(<Heading size="large">Grande</Heading>);
     const headingLarge = screen.getByRole('heading', { name: 'Grande' });
     expect(headingLarge).toHaveStyle({
-      color: theme.colors.primaryColor,
+      color: theme.colors.darkColor,
       'font-size': theme.font.sizes.huge,
       'text-transform': 'none',
     });
@@ -57,7 +57,7 @@ describe('<Heading />', () => {
     renderTheme(<Heading size="huge">Enorme</Heading>);
     const headingHuge = screen.getByRole('heading', { name: 'Enorme' });
     expect(headingHuge).toHaveStyle({
-      color: theme.colors.primaryColor,
+      color: theme.colors.darkColor,
       'font-size': theme.font.sizes.xhuge,
       'text-transform': 'none',
     });
@@ -76,8 +76,8 @@ describe('<Heading />', () => {
     renderTheme(<Heading uppercase>Título</Heading>);
     const heading = screen.getByRole('heading', { name: 'Título' });
     expect(heading).toHaveStyle({
-      color: theme.colors.primaryColor,
-      'font-size': theme.font.sizes.huge,
+      color: theme.colors.darkColor,
+      'font-size': theme.font.sizes.xlarge,
       'text-transform': 'uppercase',
     });
   });
@@ -127,5 +127,24 @@ describe('<Heading />', () => {
     );
     const h6 = container.querySelector('h6');
     expect(h6.tagName.toLowerCase()).toBe('h6');
+  });
+
+  it('should match the snapshot', () => {
+    const { container } = renderTheme(<Heading>Título</Heading>);
+    expect(container).toMatchInlineSnapshot(`
+      .c0 {
+        color: #0a1128;
+        font-size: 4rem;
+        text-transform: none;
+      }
+
+      <div>
+        <h1
+          class="c0"
+        >
+          Título
+        </h1>
+      </div>
+    `);
   });
 });
