@@ -1,10 +1,10 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
-export const TextComponent = ({ children }) => {
-  return <Styled.SimpleText>{children}</Styled.SimpleText>;
+export const TextComponent = ({ children = '' }) => {
+  return <Styled.SimpleText dangerouslySetInnerHTML={{ __html: children }} />;
 };
 
 TextComponent.propTypes = {
-  children: P.node.isRequired,
+  children: P.string,
 };

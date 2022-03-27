@@ -30,5 +30,19 @@ export const GlobalStyles = createGlobalStyle`
   {
     font-family: ${({ theme }) => theme.font.titles};
     text-transform: uppercase;
+    margin: ${({ theme }) => theme.spacings.large} 0;;
+  }
+
+  p {
+    margin: ${({ theme }) => theme.spacings.normal} 0;
+  }
+
+  ul, ol {
+    margin: ${({ theme }) => theme.spacings.normal} 0;
+    padding: ${({ theme }) => theme.spacings.normal} 0;
+  }
+
+  a {
+    color: ${({ theme }) => theme.colors.secondaryColor};
   }
 `;

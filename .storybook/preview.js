@@ -13,10 +13,11 @@ export const parameters = {
       },
       {
         name: 'dark',
-        value: theme.colors.darkColor,
+        value: theme.colors.primaryColor,
       },
     ],
   },
+  layout: 'fullscreen',
   controls: {
     matchers: {
       color: /(background|color)$/i,
