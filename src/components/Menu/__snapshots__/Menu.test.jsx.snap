@@ -35,6 +35,10 @@ exports[`<Menu /> should match the snapshot 1`] = `
 }
 
 @media (max-width:768px) {
+
+}
+
+@media (max-width:768px) {
   .c0 {
     display: -webkit-box;
     display: -webkit-flex;
@@ -103,6 +107,10 @@ exports[`<Menu /> should not render links 1`] = `
   display: inline-block;
   vertical-align: middle;
   overflow: hidden;
+}
+
+@media (max-width:768px) {
+
 }
 
 @media (max-width:768px) {

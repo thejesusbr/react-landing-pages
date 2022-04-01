@@ -28,6 +28,7 @@ export const GlobalStyles = createGlobalStyle`
   h5,
   h6
   {
+    font-size: ${({ theme }) => theme.font.sizes.large};
     font-family: ${({ theme }) => theme.font.titles};
     text-transform: uppercase;
     margin: ${({ theme }) => theme.spacings.large} 0;;

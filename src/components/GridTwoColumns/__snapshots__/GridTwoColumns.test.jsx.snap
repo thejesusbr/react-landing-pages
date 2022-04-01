@@ -46,7 +46,13 @@ exports[`<GridTwoColumns /> should match the snapshot 1`] = `
 }
 
 .c6 {
-  font-size: 2.0rem;
+  font-size: 2.4rem;
+}
+
+@media (max-width:768px) {
+  .c5 {
+    font-size: 3.2rem;
+  }
 }
 
 @media (max-width:768px) {

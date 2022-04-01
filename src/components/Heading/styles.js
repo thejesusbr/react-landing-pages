@@ -2,23 +2,44 @@ import styled, { css } from 'styled-components';
 
 const titleSizes = {
   small: (theme) => css`
-    font-size: ${theme.font.sizes.normal};
+    font-size: ${theme.font.sizes.large};
+    ${mediaQueryFontSmall(theme)};
   `,
   normal: (theme) => css`
     font-size: ${theme.font.sizes.xlarge};
+    ${mediaQueryFontNormal(theme)};
   `,
   large: (theme) => css`
-    font-size: ${theme.font.sizes.huge};
+    font-size: ${theme.font.sizes.xxlarge};
+    ${mediaQueryFontLarge(theme)};
   `,
   huge: (theme) => css`
-    font-size: ${theme.font.sizes.xhuge};
-    ${mediaQueryFont(theme)};
+    font-size: ${theme.font.sizes.huge};
+    ${mediaQueryFontHuge(theme)};
   `,
 };
 
-const mediaQueryFont = (theme) => css`
+const mediaQueryFontSmall = (theme) => css`
   @media ${theme.media.lteMedium} {
     font-size: ${theme.font.sizes.large};
+  }
+`;
+
+const mediaQueryFontNormal = (theme) => css`
+  @media ${theme.media.lteMedium} {
+    font-size: ${theme.font.sizes.large};
+  }
+`;
+
+const mediaQueryFontLarge = (theme) => css`
+  @media ${theme.media.lteMedium} {
+    font-size: ${theme.font.sizes.large};
+  }
+`;
+
+const mediaQueryFontHuge = (theme) => css`
+  @media ${theme.media.lteMedium} {
+    font-size: ${theme.font.sizes.xlarge};
   }
 `;
 

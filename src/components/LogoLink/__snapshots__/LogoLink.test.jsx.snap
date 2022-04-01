@@ -17,8 +17,14 @@ exports[`<LogoLink /> should match snapshot 1`] = `
 
 .c0 {
   color: #0a1128;
-  font-size: 2.0rem;
+  font-size: 3.2rem;
   text-transform: uppercase;
+}
+
+@media (max-width:768px) {
+  .c0 {
+    font-size: 3.2rem;
+  }
 }
 
 <h1

@@ -31,7 +31,7 @@ describe('<Heading />', () => {
     const headingSmall = screen.getByRole('heading', { name: 'Pequeno' });
     expect(headingSmall).toHaveStyle({
       color: theme.colors.darkColor,
-      'font-size': theme.font.sizes.normal,
+      'font-size': theme.font.sizes.large,
       'text-transform': 'none',
     });
 
@@ -49,7 +49,7 @@ describe('<Heading />', () => {
     const headingLarge = screen.getByRole('heading', { name: 'Grande' });
     expect(headingLarge).toHaveStyle({
       color: theme.colors.darkColor,
-      'font-size': theme.font.sizes.huge,
+      'font-size': theme.font.sizes.xxlarge,
       'text-transform': 'none',
     });
 
@@ -58,15 +58,45 @@ describe('<Heading />', () => {
     const headingHuge = screen.getByRole('heading', { name: 'Enorme' });
     expect(headingHuge).toHaveStyle({
       color: theme.colors.darkColor,
-      'font-size': theme.font.sizes.xhuge,
+      'font-size': theme.font.sizes.huge,
       'text-transform': 'none',
     });
   });
 
-  it('should render smaller huge size in small screens', () => {
+  it('should render smaller sizes in small screens', () => {
     /* huge */
     const { rerender } = renderTheme(<Heading size="huge">Enorme</Heading>);
     const headingHuge = screen.getByRole('heading', { name: 'Enorme' });
+    expect(headingHuge).toHaveStyleRule('font-size', theme.font.sizes.xlarge, {
+      media: theme.media.lteMedium,
+    });
+
+    /* large */
+    rerender(
+      <ThemeProvider theme={theme}>
+        <Heading size="large">Título</Heading>
+      </ThemeProvider>,
+    );
+    expect(headingHuge).toHaveStyleRule('font-size', theme.font.sizes.large, {
+      media: theme.media.lteMedium,
+    });
+
+    /* normal */
+    rerender(
+      <ThemeProvider theme={theme}>
+        <Heading size="normal">Título</Heading>
+      </ThemeProvider>,
+    );
+    expect(headingHuge).toHaveStyleRule('font-size', theme.font.sizes.large, {
+      media: theme.media.lteMedium,
+    });
+
+    /* small */
+    rerender(
+      <ThemeProvider theme={theme}>
+        <Heading size="small">Título</Heading>
+      </ThemeProvider>,
+    );
     expect(headingHuge).toHaveStyleRule('font-size', theme.font.sizes.large, {
       media: theme.media.lteMedium,
     });
@@ -136,6 +166,12 @@ describe('<Heading />', () => {
         color: #0a1128;
         font-size: 4rem;
         text-transform: none;
+      }
+
+      @media (max-width:768px) {
+        .c0 {
+          font-size: 3.2rem;
+        }
       }
 
       <div>

@@ -8,7 +8,7 @@ exports[`<GridContent /> should match the snapshot 1`] = `
 }
 
 .c4 {
-  margin: 5.6rem 0;
+  margin: 6.4rem 0;
 }
 
 .c1 {
@@ -38,7 +38,13 @@ exports[`<GridContent /> should match the snapshot 1`] = `
 }
 
 .c5 {
-  font-size: 2.0rem;
+  font-size: 2.4rem;
+}
+
+@media (max-width:768px) {
+  .c3 {
+    font-size: 3.2rem;
+  }
 }
 
 <div
