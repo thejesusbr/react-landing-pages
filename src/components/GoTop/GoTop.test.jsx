@@ -17,8 +17,9 @@ describe('<GoTop />', () => {
     expect(container.firstChild).toMatchInlineSnapshot(`
       .c0 {
         position: fixed;
-        background: #f3f3f3;
-        border: 1px solid #a02b2d;
+        background: #00829b;
+        color: #f3f3f3;
+        border: 1px solid #f3f3f3;
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -31,12 +32,17 @@ describe('<GoTop />', () => {
         -webkit-justify-content: center;
         -ms-flex-pack: center;
         justify-content: center;
-        width: 3.2rem;
-        height: 3.2rem;
+        width: 4rem;
+        height: 4rem;
         bottom: 2rem;
         right: 2rem;
         z-index: 6;
         opacity: 0.7;
+      }
+
+      .c0 svg {
+        width: 2.5rem;
+        height: 2.5rem;
       }
 
       .c1 {

@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
 
   html
   {
+    background: ${({ theme }) => theme.colors.lightColor};
     font-size: 62.5%;
     scroll-behavior: smooth;
   }
@@ -19,7 +20,7 @@ export const GlobalStyles = createGlobalStyle`
   {
     font-family: ${({ theme }) => theme.font.default};
     font-size: ${({ theme }) => theme.font.sizes.normal};
-    color: ${({ theme }) => theme.colors.darkColor}
+    color: ${({ theme }) => theme.colors.darkColor};
   }
 
   h1,

@@ -78,9 +78,11 @@ export const Button = styled.button`
     height: 4rem;
     background: ${theme.colors.primaryColor};
     color: ${theme.colors.lightColor};
-    border: none;
+    border: 1px solid ${theme.colors.lightColor};
+    opacity: 0.7;
     display: none;
     pointer-events: ${visible ? 'none' : 'all'};
+    cursor: pointer;
 
     @media ${theme.media.lteMedium} {
       display: flex;
