@@ -32,13 +32,14 @@ export const GridElement = styled.div`
       position: absolute;
       font-size: ${theme.font.sizes.huge};
       top: -1rem;
-      left: -${theme.spacings.xxlarge};
+      left: -${theme.spacings.xlarge};
       transform: rotate(5deg);
     }
 
     @media ${theme.media.lteMedium} {
       ${HeadingContainer}::before {
         font-size: ${theme.font.sizes.xlarge};
+        top: -0.75rem;
         left: -${theme.spacings.large};
       }
     }

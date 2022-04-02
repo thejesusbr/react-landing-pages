@@ -5,7 +5,7 @@ exports[`<TextComponent /> should match the snapshot 1`] = `
   font-size: 2.4rem;
 }
 
-<p
+<div
   class="c0"
 />
 `;

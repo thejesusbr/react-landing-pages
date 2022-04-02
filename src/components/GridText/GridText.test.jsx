@@ -1,12 +1,12 @@
 import { screen } from '@testing-library/react';
 import { renderTheme } from '../../styles/render-theme';
-import { GridSection } from '.';
+import { GridText } from '.';
 import mock from './mock';
 import { theme } from '../../styles/theme';
 
-describe('<GridSection />', () => {
+describe('<GridText />', () => {
   it('should render correctly', () => {
-    renderTheme(<GridSection {...mock} />);
+    renderTheme(<GridText {...mock} />);
 
     expect(
       screen.getByRole('heading', { name: 'Grid Section' }),
@@ -26,7 +26,7 @@ describe('<GridSection />', () => {
   });
 
   it('should render with dark background', () => {
-    renderTheme(<GridSection {...mock} background={true} />);
+    renderTheme(<GridText {...mock} background={true} />);
 
     expect(
       screen.getByRole('heading', { name: 'Grid Section' }),
@@ -35,7 +35,7 @@ describe('<GridSection />', () => {
 
   it('should render with default background', () => {
     renderTheme(
-      <GridSection
+      <GridText
         title={mock.title}
         description={mock.description}
         grid={mock.grid}
@@ -48,7 +48,7 @@ describe('<GridSection />', () => {
   });
 
   it('should match the snapshot', () => {
-    const { container } = renderTheme(<GridSection {...mock} />);
+    const { container } = renderTheme(<GridText {...mock} />);
     expect(container.firstChild).toMatchSnapshot();
   });
 });
