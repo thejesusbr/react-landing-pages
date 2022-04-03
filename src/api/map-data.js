@@ -1,12 +1,20 @@
 export const mapData = (pagesData = [{}]) => {
   return pagesData.map((data) => {
-    const { attributes = {} } = data;
+    const {
+      attributes: {
+        title = '',
+        slug = '',
+        footer: footerHtml = '',
+        sections = [],
+        menu = {},
+      } = '',
+    } = data;
     return {
-      title: attributes?.title || '',
-      slug: attributes?.slug || '',
-      footerHtml: attributes?.footer || '',
-      sections: attributes?.sections || [],
-      menu: attributes?.menu || {},
+      title,
+      slug,
+      footerHtml,
+      sections,
+      menu,
     };
   });
 };
