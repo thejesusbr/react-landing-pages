@@ -4,10 +4,10 @@ export default {
   title: 'Footer',
   component: Footer,
   args: {
-    html: `<p><a href="#target">☢ Projeto e Programação: Unincor Media Creative ☢</a></p>`,
+    footerHtml: `<p><a href="#target">☢ Projeto e Programação: Unincor Media Creative ☢</a></p>`,
   },
   argTypes: {
-    html: { type: 'string' },
+    footerHtml: { type: 'string' },
   },
 };
 

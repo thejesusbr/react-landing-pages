@@ -4,12 +4,14 @@ import { Footer } from '.';
 
 describe('<Footer />', () => {
   it('should render', () => {
-    renderTheme(<Footer html="<h1>Children</h1>" />);
+    renderTheme(<Footer footerHtml="<h1>Children</h1>" />);
     expect(screen.getByText('Children')).toBeInTheDocument();
   });
 
   it('should match the snapshot', () => {
-    const { container } = renderTheme(<Footer html="<h1>Children</h1>" />);
+    const { container } = renderTheme(
+      <Footer footerHtml="<h1>Children</h1>" />,
+    );
     expect(container.firstChild).toMatchInlineSnapshot(`
       .c4 {
         font-size: 2.4rem;
