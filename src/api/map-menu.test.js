@@ -1,46 +1,18 @@
 import { mapMenu, mapMenuLinks } from './map-menu';
+import data from './dados.json';
 
-const menuData = {
-  id: 2,
-  logo_text: 'SunlightIO',
-  logo_link: '#home',
-  new_tab: false,
+const { menu: menuData } = data.data[0].attributes;
+const {
+  new_tab,
+  logo_text,
   logo: {
     data: {
-      id: 4,
-      attributes: {
-        url: 'https://res.cloudinary.com/singularity-softworks/image/upload/v1647652186/logo_024cecb55c.png',
-      },
+      attributes: { url: imgSrc },
     },
   },
-  menu_link: [
-    {
-      id: 3,
-      link_text: 'Intro',
-      url: '#intro',
-      new_tab: false,
-    },
-    {
-      id: 4,
-      link_text: 'Benefícios',
-      url: '#beneficios',
-      new_tab: false,
-    },
-    {
-      id: 5,
-      link_text: 'Produtos e Serviços',
-      url: '#gallery',
-      new_tab: false,
-    },
-    {
-      id: 6,
-      link_text: 'Depoimentos',
-      url: '#depoimentos',
-      new_tab: false,
-    },
-    {},
-  ],
-};
+  logo_link,
+  menu_link,
+} = menuData;
 
 describe('map-menu', () => {
   it('should return a predefined object if no data', () => {
@@ -63,6 +35,11 @@ describe('map-menu', () => {
   it('should return an empty array if no links', () => {
     const links = mapMenuLinks();
     expect(links).toEqual([]);
+  });
+
+  it('should return a default object if empty array is passed', () => {
+    const links = mapMenuLinks([{}]);
+    expect(links).toEqual([{ text: '', url: '', newTab: false }]);
   });
 
   it('should map links if value is passed', () => {

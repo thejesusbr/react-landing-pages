@@ -1,7 +1,8 @@
 import { mapMenu } from './map-menu';
 import { mapSections } from './map-sections';
 
-export const mapData = (pagesData = [{}]) => {
+export const mapData = (pagesData = {}) => {
+  pagesData = pagesData?.data || [{}];
   return pagesData.map((data) => {
     const {
       attributes: {

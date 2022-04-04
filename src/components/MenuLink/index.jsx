@@ -1,10 +1,10 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
-export const MenuLink = ({ children, link, newTab = false }) => {
+export const MenuLink = ({ children, url, newTab = false }) => {
   const target = newTab ? '_blank' : '_self';
   return (
-    <Styled.MyStyle href={link} target={target}>
+    <Styled.MyStyle href={url} target={target}>
       {children}
     </Styled.MyStyle>
   );
@@ -12,6 +12,6 @@ export const MenuLink = ({ children, link, newTab = false }) => {
 
 MenuLink.propTypes = {
   children: P.node.isRequired,
-  link: P.string.isRequired,
+  url: P.string.isRequired,
   newTab: P.bool,
 };

@@ -9,6 +9,7 @@ import { useState } from 'react';
 
 export const Menu = ({ links = [], logoData }) => {
   const [visible, setVisible] = useState(false);
+  console.log('Menu: ', links);
   return (
     <>
       <Styled.Button

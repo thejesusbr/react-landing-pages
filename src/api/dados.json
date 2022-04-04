@@ -9,6 +9,80 @@
         "updatedAt": "2022-04-03T00:34:59.279Z",
         "publishedAt": "2022-03-19T02:11:03.263Z",
         "footer": "<p style=\"text-align:center;\">Feito com &lt;span class=\"heart\"&gt;❤&lt;/span&gt; por Wendell Diniz</p>",
+        "menu": {
+          "id": 2,
+          "logo_text": "SunlightIO",
+          "logo_link": "#home",
+          "new_tab": false,
+          "menu_link": [
+            {
+              "id": 3,
+              "link_text": "Intro",
+              "url": "#intro",
+              "new_tab": false
+            },
+            {
+              "id": 4,
+              "link_text": "Benefícios",
+              "url": "#beneficios",
+              "new_tab": false
+            },
+            {
+              "id": 5,
+              "link_text": "Produtos e Serviços",
+              "url": "#gallery",
+              "new_tab": false
+            },
+            {
+              "id": 6,
+              "link_text": "Depoimentos",
+              "url": "#depoimentos",
+              "new_tab": false
+            }
+          ],
+          "logo": {
+            "data": {
+              "id": 4,
+              "attributes": {
+                "name": "logo.png",
+                "alternativeText": "SunlightIO Logo",
+                "caption": "logo.png",
+                "width": 379,
+                "height": 292,
+                "formats": {
+                  "thumbnail": {
+                    "name": "thumbnail_logo.png",
+                    "hash": "thumbnail_logo_024cecb55c",
+                    "ext": ".png",
+                    "mime": "image/png",
+                    "path": null,
+                    "width": 202,
+                    "height": 156,
+                    "size": 33.47,
+                    "url": "https://res.cloudinary.com/singularity-softworks/image/upload/v1647652187/thumbnail_logo_024cecb55c.png",
+                    "provider_metadata": {
+                      "public_id": "thumbnail_logo_024cecb55c",
+                      "resource_type": "image"
+                    }
+                  }
+                },
+                "hash": "logo_024cecb55c",
+                "ext": ".png",
+                "mime": "image/png",
+                "size": 32.92,
+                "url": "https://res.cloudinary.com/singularity-softworks/image/upload/v1647652186/logo_024cecb55c.png",
+                "previewUrl": null,
+                "provider": "cloudinary",
+                "provider_metadata": {
+                  "public_id": "logo_024cecb55c",
+                  "resource_type": "image"
+                },
+                "createdAt": "2022-03-19T01:09:48.110Z",
+                "updatedAt": "2022-04-03T00:34:43.849Z"
+              }
+            }
+          }
+        },
         "sections": [
           {
             "id": 2,

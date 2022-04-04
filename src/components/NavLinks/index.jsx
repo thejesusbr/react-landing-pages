@@ -3,10 +3,13 @@ import * as Styled from './styles';
 import { MenuLink } from '../MenuLink';
 
 export const NavLinks = ({ links = [] }) => {
+  console.log('Navlinks: ', links);
   return (
     <Styled.MyStyle aria-label="Main menu">
       {links.map((link) => (
-        <MenuLink key={link.link} {...link} />
+        <MenuLink key={link.url} url={link.url} newTab={link.newTab}>
+          {link.text}
+        </MenuLink>
       ))}
     </Styled.MyStyle>
   );
@@ -15,8 +18,8 @@ export const NavLinks = ({ links = [] }) => {
 NavLinks.propTypes = {
   links: P.arrayOf(
     P.shape({
-      children: P.string.isRequired,
-      link: P.string.isRequired,
+      text: P.string.isRequired,
+      url: P.string.isRequired,
       newTab: P.bool,
     }),
   ),

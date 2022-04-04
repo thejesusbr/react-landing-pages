@@ -1,4 +1,8 @@
 import { mapData } from './map-data';
+import data from './dados.json';
+
+// Data form json for conference
+const { title, slug, footer: footerHtml } = data.data[0].attributes;
 
 describe('map-data', () => {
   it('should map data even if there is no data', () => {
@@ -9,17 +13,9 @@ describe('map-data', () => {
   });
 
   it('should map data if there is data', () => {
-    const pageData = mapData([
-      {
-        attributes: {
-          title: 'Título',
-          slug: 'slug',
-          footer: '<p>footer</p>',
-        },
-      },
-    ])[0];
-    expect(pageData.title).toBe('Título');
-    expect(pageData.slug).toBe('slug');
-    expect(pageData.footerHtml).toBe('<p>footer</p>');
+    const pageData = mapData(data)[0];
+    expect(pageData.title).toBe(title);
+    expect(pageData.slug).toBe(slug);
+    expect(pageData.footerHtml).toBe(footerHtml);
   });
 });
