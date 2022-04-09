@@ -7,7 +7,7 @@ export const theme = {
   },
   font: {
     default: "'Open Sans', Helvetica, sans-serif",
-    titles: "'Concert One', Monserrat, sans-serif",
+    titles: "Limelight, 'Concert One', Monserrat, sans-serif",
     sizes: {
       xxsmall: '0.4rem',
       xsmall: '0.8rem',

@@ -2,7 +2,7 @@
 
 exports[`<GridContent /> should match the snapshot 1`] = `
 .c2 {
-  max-width: 58rem;
+  max-width: 80%;
   text-align: center;
   margin: auto;
 }
@@ -15,6 +15,7 @@ exports[`<GridContent /> should match the snapshot 1`] = `
   max-width: 120rem;
   margin: auto;
   padding: 3.2rem;
+  width: 100%;
 }
 
 .c0 {
@@ -33,7 +34,7 @@ exports[`<GridContent /> should match the snapshot 1`] = `
 
 .c3 {
   color: #0a1128;
-  font-size: 4rem;
+  font-size: 5.6rem;
   text-transform: uppercase;
 }
 
@@ -43,12 +44,13 @@ exports[`<GridContent /> should match the snapshot 1`] = `
 
 @media (max-width:768px) {
   .c3 {
-    font-size: 3.2rem;
+    font-size: 4rem;
   }
 }
 
 <div
   class="c0"
+  id="lorem"
 >
   <div
     class="c1"

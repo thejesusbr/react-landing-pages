@@ -1,5 +1,6 @@
 export default {
   background: false,
+  sectionId: 'intro',
   title: 'Image Grid',
   description:
     'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis nam nisi ad commodi sit velit mollitia tenetur non dolorem ut dolor nulla alias, reprehenderit nostrum? Nihil maxime assumenda saepe necessitatibus!',

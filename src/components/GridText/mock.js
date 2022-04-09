@@ -1,5 +1,6 @@
 export default {
   background: false,
+  sectionId: 'grid',
   title: 'Grid Section',
   description: 'Lorem ipsum dolor sit, amet consectetur adpiscing elit.',
   grid: [

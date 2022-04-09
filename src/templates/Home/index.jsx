@@ -6,20 +6,41 @@ import * as qs from 'qs';
 import { mapData } from '../../api/map-data';
 import { PageNotFound } from '../PageNotFound';
 import { Loading } from '../Loading';
+import { GridTwoColumns } from '../../components/GridTwoColumns';
+import { GridContent } from '../../components/GridContent';
+import { GridText } from '../../components/GridText';
+import { GridImage } from '../../components/GridImage';
+import { useLocation } from 'react-router-dom';
+import config from '../../config';
 
 function Home() {
   const [data, setData] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
+    const pathname = location.pathname.replace(/[^a-zA-Z0-9-]/gi, '');
+    const slug = pathname ? pathname : config.defaultSlug;
+
     const load = async () => {
       try {
         const query = qs.stringify(
           {
-            populate: ['pages', 'menu', 'menu.logo', 'menu.menu_link'],
+            filters: { slug: slug },
+            populate: [
+              'menu',
+              'menu.logo',
+              'menu.menu_link',
+              'sections',
+              'sections.image',
+              'sections.image_grid',
+              'sections.image_grid.image',
+              'sections.text_grid',
+              'sections.metadata',
+            ],
           },
           { encodeValuesOnly: true },
         );
-        const data = await fetch(`http://localhost:1337/api/pages?${query}`);
+        const data = await fetch(config.url + query);
         const json = await data.json();
         const pageData = mapData(json);
         setData(pageData[0]);
@@ -28,7 +49,19 @@ function Home() {
       }
     };
     load();
-  }, []);
+  }, [location]);
+
+  useEffect(() => {
+    if (data === undefined) {
+      document.title = `Página não encontrada. | ${config.siteName}`;
+    }
+    if (data && !data.slug) {
+      document.title = `Carregando... | ${config.siteName}`;
+    }
+    if (data && data.title) {
+      document.title = `${data.title} | ${config.siteName}`;
+    }
+  }, [data]);
 
   if (data === undefined) {
     return <PageNotFound />;
@@ -40,7 +73,6 @@ function Home() {
 
   const { menu, sections, footerHtml } = data;
   const { links, text, link, imgSrc } = menu;
-  console.log('Home: ', { links, text, link, imgSrc });
 
   return (
     <Styled.Wrapper>
@@ -49,7 +81,21 @@ function Home() {
         footerHtml={footerHtml}
         logoData={{ text, link, imgSrc }}
       >
-        <h1>Test</h1>
+        {sections.map((section, index) => {
+          const { component } = section;
+          if (component === 'section.section-two-columns') {
+            return <GridTwoColumns key={index} {...section} />;
+          }
+          if (component === 'section.section-content') {
+            return <GridContent key={index} {...section} />;
+          }
+          if (component === 'section.section-grid-text') {
+            return <GridText key={index} {...section} />;
+          }
+          if (component === 'section.section-grid-image') {
+            return <GridImage key={index} {...section} />;
+          }
+        })}
       </Base>
     </Styled.Wrapper>
   );

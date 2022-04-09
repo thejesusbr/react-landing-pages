@@ -4,9 +4,15 @@ import { SectionBackground } from '../SectionBackground';
 import { Heading } from '../Heading';
 import { TextComponent } from '../TextComponent';
 
-export const GridText = ({ title, description, grid, background = false }) => {
+export const GridText = ({
+  title,
+  sectionId = '',
+  description,
+  grid,
+  background = false,
+}) => {
   return (
-    <SectionBackground background={background}>
+    <SectionBackground background={background} sectionId={sectionId}>
       <Styled.Container>
         <Heading as="h2" size="huge" uppercase darkBG={background}>
           {title}
@@ -29,6 +35,7 @@ export const GridText = ({ title, description, grid, background = false }) => {
 
 GridText.propTypes = {
   title: P.string.isRequired,
+  sectionId: P.string,
   description: P.string.isRequired,
   grid: P.arrayOf(
     P.shape({ title: P.string.isRequired, description: P.string.isRequired })

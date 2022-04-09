@@ -21,6 +21,7 @@ describe('<Footer />', () => {
         max-width: 120rem;
         margin: auto;
         padding: 3.2rem;
+        width: 100%;
       }
 
       .c0 {

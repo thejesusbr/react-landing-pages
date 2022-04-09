@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   ${({ theme }) => css`
-    max-width: 58rem;
+    max-width: 80%;
     text-align: center;
     margin: auto;
   `}

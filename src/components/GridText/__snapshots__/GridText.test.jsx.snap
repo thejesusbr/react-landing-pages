@@ -51,6 +51,7 @@ exports[`<GridText /> should match the snapshot 1`] = `
   max-width: 120rem;
   margin: auto;
   padding: 3.2rem;
+  width: 100%;
 }
 
 .c0 {
@@ -95,6 +96,7 @@ exports[`<GridText /> should match the snapshot 1`] = `
 
 <div
   class="c0"
+  id="grid"
 >
   <div
     class="c1"

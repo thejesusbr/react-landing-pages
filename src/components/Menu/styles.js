@@ -15,7 +15,7 @@ export const Container = styled.div`
     left: 0;
     right: 0;
     width: 100vw;
-    border-bottom: ${theme.colors.secondaryColor};
+    border-bottom: 1px solid ${theme.colors.secondaryColor};
     background: ${theme.colors.lightColor};
     transition: all 300ms ease-in-out;
 

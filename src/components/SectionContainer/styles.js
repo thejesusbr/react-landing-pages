@@ -5,5 +5,6 @@ export const MyStyle = styled.div`
     max-width: 120rem;
     margin: auto;
     padding: ${theme.spacings.large};
+    width: 100%;
   `}
 `;

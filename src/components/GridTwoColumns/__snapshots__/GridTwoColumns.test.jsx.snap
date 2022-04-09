@@ -2,8 +2,8 @@
 
 exports[`<GridTwoColumns /> should match the snapshot 1`] = `
 .c5 {
-  color: #0a1128;
-  font-size: 4rem;
+  color: #f3f3f3;
+  font-size: 5.6rem;
   text-transform: uppercase;
 }
 
@@ -29,6 +29,7 @@ exports[`<GridTwoColumns /> should match the snapshot 1`] = `
   max-width: 120rem;
   margin: auto;
   padding: 3.2rem;
+  width: 100%;
 }
 
 .c0 {
@@ -43,6 +44,8 @@ exports[`<GridTwoColumns /> should match the snapshot 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background: #00829b;
+  color: #f3f3f3;
 }
 
 .c6 {
@@ -51,7 +54,7 @@ exports[`<GridTwoColumns /> should match the snapshot 1`] = `
 
 @media (max-width:768px) {
   .c5 {
-    font-size: 3.2rem;
+    font-size: 4rem;
   }
 }
 
@@ -70,6 +73,7 @@ exports[`<GridTwoColumns /> should match the snapshot 1`] = `
 
 <div
   class="c0"
+  id="intro"
 >
   <div
     class="c1"
@@ -83,21 +87,21 @@ exports[`<GridTwoColumns /> should match the snapshot 1`] = `
         <h2
           class="c4 c5"
         >
-          Grid Two Columns
+          Home
         </h2>
         <div
           class="c6"
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, corrupti aliquam porro quidem assumenda sapiente consequatur aperiam molestias reiciendis tempore perferendis reprehenderit unde? Quas hic vitae, impedit veritatis itaque molestias!
+          Já imaginou produzir sua própria energia e reduzir…ue agride menos o meio-ambiente? Agora você pode!
         </div>
       </div>
       <div
         class=""
       >
         <img
-          alt="Grid Two Columns"
+          alt="Home"
           class="c7"
-          src="assets/img/graphic_designer.webp"
+          src="https://res.cloudinary.com/singularity-softworks/i…d/v1647653269/piqsels_com_id_sbrnx_c81d065c8a.jpg"
         />
       </div>
     </div>

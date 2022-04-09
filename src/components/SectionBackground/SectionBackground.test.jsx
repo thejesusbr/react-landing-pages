@@ -23,6 +23,7 @@ describe('<SectionBackground />', () => {
         max-width: 120rem;
         margin: auto;
         padding: 3.2rem;
+        width: 100%;
       }
 
       .c0 {
@@ -41,6 +42,7 @@ describe('<SectionBackground />', () => {
 
       <div
         class="c0"
+        id=""
       >
         <div
           class="c1"

@@ -11,7 +11,7 @@ export const MenuLink = ({ children, url, newTab = false }) => {
 };
 
 MenuLink.propTypes = {
-  children: P.node.isRequired,
+  children: P.node,
   url: P.string.isRequired,
   newTab: P.bool,
 };

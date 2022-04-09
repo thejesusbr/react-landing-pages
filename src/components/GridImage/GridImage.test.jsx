@@ -11,6 +11,15 @@ describe('<GridImage />', () => {
     ).toBeInTheDocument();
   });
 
+  it('should render when no sectionId is provided', () => {
+    renderTheme(
+      <GridImage {...mock} sectionId={undefined} background={true} />,
+    );
+    expect(
+      screen.getByRole('heading', { name: 'Image Grid' }),
+    ).toBeInTheDocument();
+  });
+
   it('should match the snapshot', () => {
     const { container } = renderTheme(
       <GridImage {...mock} background={undefined} />,
