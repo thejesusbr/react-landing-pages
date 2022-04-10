@@ -40,8 +40,11 @@ function Home() {
           },
           { encodeValuesOnly: true },
         );
-        const data = await fetch(config.url + query);
+        console.log(config.url + query);
+        // const data = await fetch(config.url + query);
+        const data = await fetch(config.url);
         const json = await data.json();
+        if (json.error) throw new Error(json.error);
         const pageData = mapData(json);
         setData(pageData[0]);
       } catch (e) {
