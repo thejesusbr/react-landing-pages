@@ -40,9 +40,9 @@ function Home() {
           },
           { encodeValuesOnly: true },
         );
-        console.log(config.url + query);
-        // const data = await fetch(config.url + query);
-        const data = await fetch(config.url);
+        // console.log(config.url + query);
+        const data = await fetch(config.url + query);
+        // const data = await fetch(config.url);
         const json = await data.json();
         if (json.error) throw new Error(json.error);
         const pageData = mapData(json);
