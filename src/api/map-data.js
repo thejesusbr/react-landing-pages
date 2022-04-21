@@ -13,6 +13,7 @@ export const mapData = (pagesData = {}) => {
         menu = {},
       } = '',
     } = data;
+    console.log(title, slug, footerHtml, sections, menu);
     return {
       title,
       slug,

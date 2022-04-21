@@ -1,9 +1,7 @@
 import * as Styled from './styles';
 import { Base } from '../Base';
-import mockBase from '../Base/mock';
 import { useEffect, useState } from 'react';
 import * as qs from 'qs';
-import { mapData } from '../../api/map-data';
 import { PageNotFound } from '../PageNotFound';
 import { Loading } from '../Loading';
 import { GridTwoColumns } from '../../components/GridTwoColumns';
@@ -12,6 +10,7 @@ import { GridText } from '../../components/GridText';
 import { GridImage } from '../../components/GridImage';
 import { useLocation } from 'react-router-dom';
 import config from '../../config';
+import { mapData } from '../../api/map-data';
 
 function Home() {
   const [data, setData] = useState([]);
@@ -40,14 +39,13 @@ function Home() {
           },
           { encodeValuesOnly: true },
         );
-        // console.log(config.url + query);
         const data = await fetch(config.url + query);
-        // const data = await fetch(config.url);
         const json = await data.json();
         if (json.error) throw new Error(json.error);
         const pageData = mapData(json);
         setData(pageData[0]);
       } catch (e) {
+        console.log('Error: ', e.message);
         setData(undefined);
       }
     };
@@ -55,6 +53,7 @@ function Home() {
   }, [location]);
 
   useEffect(() => {
+    console.log('data: ', data);
     if (data === undefined) {
       document.title = `Página não encontrada. | ${config.siteName}`;
     }
@@ -76,6 +75,7 @@ function Home() {
 
   const { menu, sections, footerHtml } = data;
   const { links, text, link, imgSrc } = menu;
+  console.log('data: ', data);
 
   return (
     <Styled.Wrapper>
